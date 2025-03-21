@@ -69,15 +69,23 @@ Kw = diag([22, 22, 10])
 
 ## 📊 Results
 
-| Metric            | Result        |
-|------------------|---------------|
-| Goal Reached     | ✅ Yes         |
-| Collision-Free   | ✅ Yes         |
-| Max Speed        | ~1.0 m/s      |
-| Avg Error        | ~6 cm         |
-| Planning Time    | ~1.2 sec      |
+### 3D Path Visualization
+![3D Path](assets/3D_Path.png)
 
-Demo plots, response graphs, and maze trajectories are included in the `docs/` folder.
+### A* Path, Waypoints, and Trajectory
+![A* Path, Waypoints, and Trajectory](assets/A_Path,_Waypoints,_and_Trajectory.png)
+
+### Commands vs. Time
+![Commands vs. Time](assets/Commands_vs_Time.png)
+
+### Orientation vs. Time
+![Orientation vs. Time](assets/Orientation_vs_Time.png)
+
+### Position vs. Time
+![Position vs. Time](assets/Position_vs_Time.png)
+
+### Flight Demonstration Video
+[![Watch Video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](YOUR_VIDEO_LINK)
 
 ---
 
