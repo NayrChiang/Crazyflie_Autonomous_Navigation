@@ -69,73 +69,41 @@ Kw = diag([22, 22, 10])
 
 ## 📊 Results
 
-### 3D Path Visualization
-![3D Path](assets/3D_Path.png)
-
 ### A* Path, Waypoints, and Trajectory
-![A* Path, Waypoints, and Trajectory](assets/A_Path,_Waypoints,_and_Trajectory.png)
+![A* Path, Waypoints, and Trajectory](https://github.com/NayrChiang/Crazyflie_Autonomous_Navigation/blob/0837767ba6fd430e6a5c341038682e25f143774e/docs/Images/A_Path%2C_Waypoints%2C_and_Trajectory.png)
 
-### Commands vs. Time
-![Commands vs. Time](assets/Commands_vs_Time.png)
-
-### Orientation vs. Time
-![Orientation vs. Time](assets/Orientation_vs_Time.png)
+### 3D Path Visualization
+![3D Path](https://github.com/NayrChiang/Crazyflie_Autonomous_Navigation/blob/0837767ba6fd430e6a5c341038682e25f143774e/docs/Images/3D_Path.png)
 
 ### Position vs. Time
-![Position vs. Time](assets/Position_vs_Time.png)
+![Position vs. Time](https://github.com/NayrChiang/Crazyflie_Autonomous_Navigation/blob/3fad9e506301fc10ba3470cceef8a08ae1e87d2d/docs/Images/Position_vs_Time.png)
+
+### Orientation vs. Time
+![Orientation vs. Time](https://github.com/NayrChiang/Crazyflie_Autonomous_Navigation/blob/3fad9e506301fc10ba3470cceef8a08ae1e87d2d/docs/Images/Orientation_vs_Time.png)
+
+### Commands vs. Time
+![Commands vs. Time]([assets/Commands_vs_Time.png](https://github.com/NayrChiang/Crazyflie_Autonomous_Navigation/blob/0837767ba6fd430e6a5c341038682e25f143774e/docs/Images/Commands_vs_Time.png))
 
 ### Flight Demonstration Video
-[![Watch Video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](YOUR_VIDEO_LINK)
+[Flight Animation](https://github.com/NayrChiang/Crazyflie_Autonomous_Navigation/blob/3fad9e506301fc10ba3470cceef8a08ae1e87d2d/docs/Images/Flight_Animation.gif)
 
 ---
 
 ## 🔹 Repository Structure
 
 ```
-crazyflie-autonomous-navigation/
-├── control/
-│   └── se3_control.py
-├── planning/
-│   ├── occupancy_map.py
-│   └── graph_search.py
-├── trajectory/
-│   └── world_traj.py
-├── simulation/
-│   └── sandbox.py
-├── docs/
-│   └── report_project1.4_team6.pdf
-└── README.md
+📂 crazyflie-autonomous-navigation/
+│── 📂 docs/               # Contains project report and results
+│── 📂 code/               # All of the project source code
+│── README.md              # Project overview, discussion, and results
+│── LICENSE                # Open-source license (MIT recommended)
+│── .gitignore             # Ignore unnecessary files (build files, logs)
 ```
 
----
-
-## 🚀 How to Run
-
-1. Install dependencies:
-```bash
-pip install numpy scipy matplotlib cvxopt
-```
-
-2. Run simulation:
-```bash
-python simulation/sandbox.py
-```
-
-3. Optional: Visualize occupancy map or trajectory results in 3D plots.
-
----
 
 ## 📅 Final Report
 
-See [`docs/report_project1.4_team6.pdf`](docs/report_project1.4_team6.pdf) for details of the real-world testing results with Crazyflie.
-
----
-
-## 📧 Contact
-
-For questions or collaboration:
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- Email: [your.email@example.com](mailto:your.email@example.com)
+See [`docs/report_project1.4_team6.pdf`](https://github.com/NayrChiang/Crazyflie_Autonomous_Navigation/blob/3fad9e506301fc10ba3470cceef8a08ae1e87d2d/docs/MEAM_6200_1_4_Team_6_Report.pdf) for details of the real-world testing results with Crazyflie.
 
 ---
 
