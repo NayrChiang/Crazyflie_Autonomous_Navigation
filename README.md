@@ -17,7 +17,7 @@ The quadrotor autonomy pipeline consists of the following key components:
    Using an A* graph search algorithm, a collision-free path is computed from the start to the goal position. The planner operates in discrete voxel space, guided by a Chebyshev heuristic.
 
 3. **Trajectory Generation**  
-   The planned path is sparsified using the Ramer–Douglas–Peucker (RDP) algorithm, then smoothed into a continuous, dynamically feasible trajectory using minimum jerk optimization. A trapezoidal velocity profile ensures smooth transitions between waypoints.
+   The planned path is sparsified using an adaptive waypoint selection method and then smoothed into a continuous, dynamically feasible trajectory using minimum snap optimization.
 
 4. **Geometric Control**  
    A nonlinear SE(3) controller computes thrust and torques needed to track the desired trajectory. The controller converts position and orientation errors into control commands and outputs rotor speeds.
@@ -29,36 +29,31 @@ The quadrotor autonomy pipeline consists of the following key components:
 
 ## 📂 Project Pipeline
 
-### 1. Modeling & Dynamics
-- Simulated the quadrotor using the Newton-Euler formulation.
-- Used a 6-DOF state representation with full rotational dynamics.
-
-### 2. Occupancy Mapping
+### 1. Occupancy Mapping
 - `occupancy_map.py` builds a 3D voxel grid with inflated obstacle boundaries.
 - Handles coordinate conversions between metric and voxel index space.
 
-### 3. Graph Search Planning
+### 2. Graph Search Planning
 - `graph_search.py` implements A* over a 26-connected grid.
 - Uses Chebyshev distance as heuristic and returns a dense collision-free path.
 
-### 4. Trajectory Generation
+### 3. Trajectory Generation
 - `world_traj.py`:
-  - Uses RDP to prune waypoints.
-  - Allocates time using trapezoidal velocity profiles.
-  - Generates minimum jerk trajectories via QP optimization.
+  - Uses an adaptive waypoint selection strategy.
+  - Generates minimum snap trajectories for smooth flight execution.
 
-### 5. SE(3) Control
+### 4. SE(3) Control
 - `se3_control.py` implements a geometric PD controller in SE(3).
 - Tracks position and orientation using tuned gain matrices:
 
 ```python
-Kp = diag([6., 6., 40])
-Kd = diag([5, 5, 10])
-Kr = diag([200, 200, 40])
-Kw = diag([22, 22, 10])
+Kp = np.diag([6., 6., 40])
+Kd = np.diag([5, 5, 10])
+Kr = np.diag([200, 200, 40])
+Kw = np.diag([22, 22, 10])
 ```
 
-### 6. Simulation & Testing
+### 5. Simulation & Testing
 - `sandbox.py` integrates the full stack:
   - Loads test map
   - Plans & generates trajectory
