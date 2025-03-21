@@ -29,9 +29,16 @@ The quadrotor autonomy pipeline consists of the following key components:
 
 ## 📂 Project Pipeline
 
-### 1. Occupancy Mapping
-- `occupancy_map.py` builds a 3D voxel grid with inflated obstacle boundaries.
-- Handles coordinate conversions between metric and voxel index space.
+### 1. SE(3) Control
+- `se3_control.py` implements a geometric PD controller in SE(3).
+- Tracks position and orientation using tuned gain matrices:
+
+```python
+Kp = np.diag([6., 6., 40])
+Kd = np.diag([5, 5, 10])
+Kr = np.diag([200, 200, 40])
+Kw = np.diag([22, 22, 10])
+```
 
 ### 2. Graph Search Planning
 - `graph_search.py` implements A* over a 26-connected grid.
@@ -42,16 +49,9 @@ The quadrotor autonomy pipeline consists of the following key components:
   - Uses an adaptive waypoint selection strategy.
   - Generates minimum snap trajectories for smooth flight execution.
 
-### 4. SE(3) Control
-- `se3_control.py` implements a geometric PD controller in SE(3).
-- Tracks position and orientation using tuned gain matrices:
-
-```python
-Kp = np.diag([6., 6., 40])
-Kd = np.diag([5, 5, 10])
-Kr = np.diag([200, 200, 40])
-Kw = np.diag([22, 22, 10])
-```
+### 4. Occupancy Mapping
+- `occupancy_map.py` builds a 3D voxel grid with inflated obstacle boundaries.
+- Handles coordinate conversions between metric and voxel index space.
 
 ### 5. Simulation & Testing
 - `sandbox.py` integrates the full stack:
