@@ -79,8 +79,11 @@ Kw = np.diag([22, 22, 10])
 ### Commands vs. Time
 ![Commands vs. Time](https://github.com/NayrChiang/Crazyflie_Autonomous_Navigation/blob/0837767ba6fd430e6a5c341038682e25f143774e/docs/Images/Commands_vs_Time.png)
 
-### Flight Demonstration Video
+### Flight Simulation Video
 [Flight Animation](https://github.com/NayrChiang/Crazyflie_Autonomous_Navigation/blob/3fad9e506301fc10ba3470cceef8a08ae1e87d2d/docs/Images/Flight_Animation.gif)
+
+### Actual Flight Demonstration
+[Actual Flight](https://youtu.be/jsFprTzBSc8)
 
 ---
 
